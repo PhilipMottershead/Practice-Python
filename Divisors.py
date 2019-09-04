@@ -6,6 +6,6 @@
 input_number = int(input("Input number: "))
 y = []
 for num in range(1, input_number):
-    if input_number % num  == 0:
+    if input_number % num == 0:
         y.append(num)
 print(y)
