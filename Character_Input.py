@@ -7,9 +7,14 @@
 # (Hint: the string "\n is the same as pressing the ENTER button)
 import datetime
 
-now = datetime.datetime.now()
-name = input("What is your name? ")
-age = int(input("What is your age? "))
-times_to_print = int(input("Input number of times to print :"))
-year_at_100 = now.year+100-age
-print(f"Hi {name} you will be 100 in the year {year_at_100}\n"*times_to_print)
+
+def method_name():
+    now = datetime.datetime.now()
+    name = input("What is your name? ")
+    age = int(input("What is your age? "))
+    times_to_print = int(input("Input number of times to print :"))
+    year_at_100 = now.year + 100 - age
+    print(f"Hi {name} you will be 100 in the year {year_at_100}\n" * times_to_print)
+
+
+method_name()
