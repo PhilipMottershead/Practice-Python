@@ -48,6 +48,6 @@ def check_guess(guess, num, num_of_guess):
     elif guess > num:
         print("Too high\n")
         return False
-
+    
 
 user_input()
