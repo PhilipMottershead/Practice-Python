@@ -12,10 +12,14 @@
 import random
 a = random.sample(range(1, 101), 25)
 b = random.sample(range(1, 101), 25)
-c = []
-for num in a:
-    if num in b and num not in c:
-        c.append(num)
-print(c)
 
 
+def check_for_duplicates(list_a, list_b):
+    list_result = []
+    for num in list_a:
+        if num in list_b and num not in list_result:
+            list_result.append(num)
+    return list_result
+
+
+print(check_for_duplicates(a, b))
