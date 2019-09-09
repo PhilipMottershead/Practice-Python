@@ -48,30 +48,32 @@ def generate_password_weak(num_of_words):
 
 
 def menu():
-    input_string = input("Weak or Strong?\nW for Weak \nS for Strong").capitalize()
+    input_string = input("Weak or Strong?\nW for Weak \nS for Strong\n").capitalize()
+    choice = ["W", "S"]
+    while input_string not in choice:
+        print("Invalid input try again")
+        input_string = input("Weak or Strong?\nW for Weak \nS for Strong\n").capitalize()
     if input_string == "W":
         weak_menu()
-    elif input_string == "S":
+    elif input_string == "W":
         strong_menu()
-    else:
-        print("Invalid input try again")
-        menu()
 
 
 def strong_menu():
-    length = input("Enter length of password: ")
-    if length.isnumeric():
-        print(generate_password_strong(int(length)-1))
-    else:
-        strong_menu()
+    length = input("Enter length of password: \n")
+    while not length.isnumeric():
+        print("Invalid entry")
+        length = input("Enter length of password: \n")
+
+    print(generate_password_strong(int(length)-1))
 
 
 def weak_menu():
-    num_of_words = input("Enter number of words in password: ")
-    if num_of_words.isnumeric():
-        print(generate_password_weak(int(num_of_words)))
-    else:
-        strong_menu()
+    num_of_words = input("Enter number of words in password: \n")
+    while not num_of_words.isnumeric():
+        print("Invalid")
+        num_of_words = input("Enter number of words in password: \n")
+    print(generate_password_weak(int(num_of_words)))
 
 
 menu()
